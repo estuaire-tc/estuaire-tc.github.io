@@ -3,117 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Site dédié aux transports en commun de Saint-Nazaire et Nantes.">
-    <title>Passion Transports - Saint-Nazaire & Nantes</title>
+    <title>Bienvenue sur le site ! - ATTENTION CECI EST UN TEST</title>
+	<time>Info réseau - STRAN Saint-Nazaire</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            background-color: #ffe0b3; /* Orange clair */
             color: #333;
         }
+
         header {
-            background-color: #005daa;
+            background-color: #ff9800; /* Couleur STRAN */
             color: white;
-            padding: 20px 0;
+            padding: 1rem 0;
             text-align: center;
         }
-        nav {
-            background-color: #003f7f;
-            text-align: center;
-            padding: 10px 0;
+
+        main {
+            padding: 2rem;
         }
-        nav a {
+
+        section {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background-color: white;
+            border-radius: 5px;
+            border: 2px solid #ff9800;
+        }
+
+        h1, h2 {
+            color: #ff9800;
+        }
+
+        footer {
+            background-color: #333;
             color: white;
-            text-decoration: none;
-            margin: 0 15px;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        .dropdown {
+            margin: 1rem 0;
+        }
+
+        .dropdown button {
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .dropdown button:hover {
+            background-color: #e08900;
+        }
+
+        .dropdown-content {
+            display: none;
+            margin-top: 0.5rem;
+            padding-left: 1rem;
+        }
+
+        .dropdown-content ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .dropdown-content li {
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 5px;
+            color: white;
             font-weight: bold;
         }
-        nav a:hover {
-            text-decoration: underline;
+
+        .dropdown-content.show {
+            display: block;
         }
-        .container {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .hero {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .hero h1 {
-            font-size: 2.5em;
-            color: #005daa;
-        }
-        .hero p {
-            font-size: 1.2em;
-        }
-        .sections {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .section {
-            flex: 1 1 calc(50% - 20px);
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 15px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .section h2 {
-            font-size: 1.5em;
-            color: #003f7f;
-        }
-        .section p {
-            font-size: 1em;
-        }
-        footer {
-            text-align: center;
-            padding: 15px 0;
-            background-color: #005daa;
-            color: white;
-            margin-top: 20px;
-        }
+
+        /* Couleurs des lignes */
+        .helyce { background-color: #ff0000; } /* Rouge */
+        .u1 { background-color: #f39200; }
+        .u2 { background-color: #94c23d; }
+        .u3 { background-color: #78b7e5; }
+        .u4 { background-color: #a7358b; }
+        .l13 { background-color: #004f8e; }
+        .t3 { background-color: #ea9fc5; }
+        .t4 { background-color: #15af97; }
+        .t5 { background-color: #6f6f6f; }
+        .c1 { background-color: #0069b4; }
+        .c2 { background-color: #00aeef; }
+        .sd { background-color: #ffdd00; }
     </style>
+    <script>
+        function toggleDropdown(id) {
+            const content = document.getElementById(id);
+            content.classList.toggle('show');
+        }
+    </script>
 </head>
 <body>
     <header>
-        <h1>Passion Transports - Saint-Nazaire & Nantes</h1>
-        <p>Bienvenue sur mon site dédié aux transports en commun locaux</p>
+        <h1>Info réseau</h1>
     </header>
-    <nav>
-        <a href="#anniversaire">Anniversaire des réseaux</a>
-        <a href="#lignes">Lignes</a>
-        <a href="#galerie">Galerie</a>
-    </nav>
-    <div class="container">
-        <div class="hero">
-            <h1>Explorez les transports en commun de Saint-Nazaire et Nantes</h1>
-            <p>Découvrez l’histoire, les lignes emblématiques, des photos uniques et bien plus encore.</p>
-        </div>
-        <div class="sections">
-            <div class="section" id="anniversaire">
-                <h2>Anniversaire des réseaux</h2>
-                <p>Récemment les réseaux ont célébrés leurs anniversaires.</p>
-				<p>Les 40 ans de service pour la STRAN et puis les 40 ans du réseau de tramways moderne de Nantes.<p>
-				<p>L'occasion de fêter des années de travail, l'évolution des transports en commun dans le paysage urbain
-				mais aussi des changements vie à vie des habitudes des voyageurs qui empreintent les réseaux.<p>
-				<p>Alors bon anniversaire à la STRAN et au tramway moderne nantais !<p>
+
+    <main>
+        <section>
+            <h2>Le réseau STRAN des années 80/2000</h2>
+            <p>À cette période, le réseau de transport de Saint-Nazaire était marqué par la présence de <strong>Stany</strong>, la mascotte de la STRAN.</p>
+			<p>Ce personnage accompagnait la communication du réseau et  notamment sur les affiches horaires sur les abribus.</p>
+            <p>Les bus arboraient des designs rétro et le réseau s'est progressivement modernisé avec l'apparition de nouvelles lignes et de services améliorés.</p>
+        </section>
+
+        <section>
+            <h2>Les lignes d'aujourd'hui</h2>
+            <p>Le réseau STRAN dessert l'agglomération de Saint-Nazaire et propose :</p>
+            <ul>
+                <li>Bus : les lignes régulières pour se déplacer dans la ville ou/et vers les communes avoisinantes.</li>
+                <li>Transport à la demande : un service de transport pour les zones peu desservies TYBUS TAXI.</li>
+            </ul>
+
+            <div class="dropdown">
+                <button onclick="toggleDropdown('bhns')">Lignes BHNS</button>
+                <div id="bhns" class="dropdown-content">
+                    <ul>
+                        <li class="helyce">Ligne Hélyce - Montoir/Trignac <> Université</li>
+                    </ul>
+                </div>
             </div>
-            <div class="section" id="lignes">
-                <h2>Les Lignes Incontournables</h2>
-                <p>Découvrez les trams, bus et navettes emblématiques qui relient nos villes et nos quartiers.</p>
+
+            <div class="dropdown">
+                <button onclick="toggleDropdown('urbaines')">Lignes urbaines</button>
+                <div id="urbaines" class="dropdown-content">
+                    <ul>
+                        <li class="u1">Ligne U1 - Gare SNCF <> Pré Hembert</li>
+                        <li class="u2">Ligne U2 - Voltaire — Landettes <> Le Grand Pez</li>
+                        <li class="u3">Ligne U3 - Halles de Penhoët <> Chemin de la Source</li>
+                        <li class="u4">Ligne U4 - Petit Maroc <> Saint-André-des-Eaux</li>
+                        <li class="l13">Ligne L13 - Cité Sanitaire <> Gare de la Baule / Le Guézy</li>
+                    </ul>
+                </div>
             </div>
-            <div class="section" id="galerie">
-                <h2>Galerie Photo</h2>
-                <p>Admirez des images captivantes de véhicules, gares et paysages urbains qui témoignent de notre patrimoine.</p>
+
+            <div class="dropdown">
+                <button onclick="toggleDropdown('periurbaines')">Lignes périurbaines</button>
+                <div id="periurbaines" class="dropdown-content">
+                    <ul>
+                        <li class="t3">Ligne T3 - Gare SNCF <> La Chapelle-des-Marais</li>
+                        <li class="t4">Ligne T4 - Gare SNCF <> Gare de Donges</li>
+                        <li class="t5">Ligne T5 - Gare SNCF <> Besné — ZA Harrois</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </div>
+
+            <div class="dropdown">
+                <button onclick="toggleDropdown('complementaires')">Lignes complémentaires</button>
+                <div id="complementaires" class="dropdown-content">
+                    <ul>
+                        <li class="c1">Ligne C1 - Gare SNCF <> Mairie de Trignac</li>
+                        <li class="c2">Ligne C2 - Gare SNCF <> Trévélan</li>
+                        <li class="sd">Ligne S/D - Soir/Dimanche</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p>Pour plus d'infos, consultez le site officiel de la STRAN : <a href="https://www.stran.fr" target="_blank">www.stran.fr</a>.</p>
+        </section>
+    </main>
+
     <footer>
-        <p>&copy; 2025 Passion Transports - Tous droits réservés</p>
+        <p>&copy; 2024 Info réseau STRAN Saint-Nazaire</p>
+        <p>___ PASSION TAN - ESTUAIRE TC___</p>
     </footer>
 </body>
 </html>
