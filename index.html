@@ -87,6 +87,24 @@
             display: block;
         }
 
+        /* Couleurs lignes 2000*/
+        .ligne10 { background-color: #df0031; }
+        .ligne20 { background-color: #aa7aaf; }
+        .ligne30 { background-color: #27a2dd; }
+        .ligne40 { background-color: #00937a; }
+        .ligne45 { background-color: #f398bf; }
+        .ligne60 { background-color: #3eb754; }
+        .ligne70 { background-color: #80003d; }
+		.ligne71 { background-color: #f4812a; }
+		
+		.tybus2 { background-color: #15af97; }
+		.tybus3 { background-color: #15af97; }
+        .tybus4 { background-color: #ea9fc5; }
+        .tybus5 { background-color: #15af97; }
+        .tybus6 { background-color: #6f6f6f; }
+        .tybus7 { background-color: #0069b4; }
+        .tybus9 { background-color: #00aeef; }
+
         /* Couleurs lignes 2012 */
         .helyce { background-color: #ff0000; }
         .u1 { background-color: #f39200; }
@@ -130,24 +148,34 @@
 
     <main>
 		<section>
-            <h2>INFO SITE</h2>
+            <h2>INFO SITE !</h2>
             <p>Ce site est actuellement en cours de développement, par conséquent cette page est encore en cours d'écriture...</p>
 			<p>Ce projet est indépendant et ne remplace en aucun cas les sites officiels des réseaux de transports en commun.</p>
 			<p>	Son objectif est de retracer l'histoire et l'évolution des réseaux de Saint-Nazaire et de Nantes.</p>
         </section>
-		
-        <section>
-            <h2>Le réseau des années 80</h2>
-            <p>À cette période, le réseau de transport de Saint-Nazaire était marqué par la présence du <strong>Strany</strong>, la mascotte du réseau.</p>
-			<p>Ce personnage accompagnait la communication du réseau et notamment sur les affiches horaires sur les abribus.</p>
-            <p>Les bus arboraient des designs jaune/bleue avec un schéma de lignes et le réseau s'est progressivement modernisé avec l'apparition de nouvelles lignes et de services améliorés.</p>
-        </section>
 
         <section>
-            <h2>Le réseau STRAN début 2000</h2>
+            <h2>STRAN 2000</h2>
             <p>À cette période, le réseau de transport de Saint-Nazaire était marqué par la présence du <strong>Strany</strong>, la mascotte du réseau.</p>
-			<p>Ce personnage accompagnait la communication du réseau et notamment sur les affiches horaires sur les abribus.</p>
-            <p>Les bus arboraient des designs jaune/bleue avec un schéma de lignes et le réseau s'est progressivement modernisé avec l'apparition de nouvelles lignes et de services améliorés.</p>
+            <p>Ce personnage accompagnait la communication du réseau et notamment sur les affiches horaires sur les abribus.</p>
+            <p>Les bus arboraient des designs jaune et bleu avec un schéma de lignes, et la STRAN s'est modernisée avec l'apparition de nouveaux services comme TY'BUS TAXI.</p>
+
+            <div class="dropdown">
+                <button type="button" onclick="toggleDropdown('urbaines2000')">Lignes urbaines</button>
+                
+                <div id="urbaines2000" class="dropdown-content">
+                    <ul>
+                        <li class="ligne10">Ligne 10 - Méan Centre <> Bouletterie</li>
+                        <li class="ligne20">Ligne 20 - Heinlex LEP <> Bert</li>
+                        <li class="ligne30">Ligne 30 - Hôtel de Villet <> UNIVERSITE</li>
+                        <li class="ligne40">Ligne 40 - Gare SNCF <> Chemin de la Source</li>
+                        <li class="ligne45">Ligne 45 - Trignac <> Villès - Mollé</li>
+                        <li class="ligne60">Ligne 60 - Raoul Dufy <> UNIVERSITE</li>
+                        <li class="ligne70">Ligne 70 - La Belle Hautière <> Brais</li>
+                        <li class="ligne71">Ligne 71 - Le Cormier <> Ecomusée</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <section>
@@ -158,14 +186,14 @@
 				<li><strong>Information voyageurs en temps réel</strong> (écrans aux arrêts, appli M-STRAN, ...).</li>
 				<li><strong>Création du pôle d'échanges</strong> sur le parvis de la Gare SNCF de Saint-Nazaire.</p>
             <p>Evidemment d'autres évolutions ont été aussi présente mais ça serait trop long à tout lister...</p>
-			<p>A NOTE : Le réseau STRAN 2012 sera présent jusqu'au <strong>23 janvier 2026</strong></p>
+			<p>A NOTE : Le réseau STRAN 2012 sera présent jusqu'au <strong>23 janvier 2026</strong> au soir !</p>
             </ul>
 
             <div class="dropdown">
                 <button onclick="toggleDropdown('bhns')">Ligne BHNS</button>
                 <div id="bhns" class="dropdown-content">
                     <ul>
-                        <li class="helyce">Ligne Hélyce - Montoir/Trignac <> Université</li>
+                        <li class="helyce">Ligne Hélyce - Montoir / Trignac <> Université</li>
                     </ul>
                 </div>
             </div>
@@ -208,8 +236,9 @@
         </section>
 
 		<section>
-            <h2>Les lignes du futur réseau</h2>
-            <p>Le réseau sera entièrement refait en janvier 2026 dans le cadre de l'arrivé des nouveaux bus électriques.</p>
+            <h2>Le réseau en 2026</h2>
+            <p>Le réseau est entièremment revu dans le cadre de l'arrivé des nouveaux bus électriques.</p>
+			<p>L'ouverture du nouveau réseau survient le samedi 23 janvier.</p>
             <ul>
                 <li>Le réseau comportera 3 lignes BHNS (H1 / H2 / H3) et 10 lignes standard (4, 5, 6, 7, 8, 9 et L13).</li>
                 <li>TAD YCEO FLEX (anciennement TY'BUS TAXI): le service sera pris en charge avec un abonnement et une refonte aussi des arrêts desservis.</li>
@@ -237,7 +266,7 @@
                         <li class="l13">Ligne L13 - Cité Sanitaire <> Gare de la Baule / Le Guézy</li>
 						<li class="l8">Ligne 8 - Gare SNCF <> La Chapelle-des-Marais</li>
                         <li class="l9">Ligne 9 - Gare SNCF <> Gare de Donges</li>
-                        <li class="l305">Ligne 305 - Gare SNCF <> Besné — ZA Harrois (mutualisé Aleop)</li>
+                        <li class="l305">Ligne 305 - Gare SNCF <> Besné — ZA Harrois (ligne mutualisée Aleop)</li>
                     </ul>
                 </div>
             </div>
@@ -260,12 +289,7 @@
     <footer>
         <p>&copy; 2025 ESTUAIRE TC - PASSION TAN</p>
 		<p>Suivez-moi sur <a href="https://www.instagram.com/passion.tan/">Instagram</a> :)</p>
-        <p>VERSION EN TEST - V1</p>
+        <p>VERSION 1(test) / Tous droits réservés</p>
     </footer>
 </body>
 </html>
-
-
-
-
-
