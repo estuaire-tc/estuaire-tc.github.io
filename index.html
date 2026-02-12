@@ -9,7 +9,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ffe0b3; /* Orange clair */
+            background-color: #ffe0b3; /* Orange */
             color: #333;
         }
 
@@ -22,15 +22,13 @@
 
         main {
             padding: 2rem;
-            max-width: 1000px; /* Pour une meilleure lecture sur PC */
-            margin: auto;
         }
 
         section {
             margin-bottom: 2rem;
-            padding: 1.5rem;
+            padding: 1rem;
             background-color: white;
-            border-radius: 8px;
+            border-radius: 5px;
             border: 2px solid #ff9800;
         }
 
@@ -42,13 +40,14 @@
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 2rem 0;
+            padding: 1rem 0;
             margin-top: 2rem;
         }
 
-        footer a { color: #ff9800; text-decoration: none; }
+        .search-container {
+            margin-bottom: 1rem;
+        }
 
-        .search-container { margin-bottom: 1.5rem; }
         #searchInput {
             width: 100%;
             padding: 10px;
@@ -57,41 +56,50 @@
             box-sizing: border-box;
         }
 
-        .dropdown { margin: 1rem 0; }
+        .dropdown {
+            margin: 1rem 0;
+        }
+
         .dropdown button {
             background-color: #ff9800;
             color: white;
             border: none;
-            padding: 0.7rem 1rem;
+            padding: 0.5rem 1rem;
             font-size: 1rem;
             cursor: pointer;
             border-radius: 5px;
             width: 100%;
             text-align: left;
-            transition: 0.3s;
         }
 
-        .dropdown button:hover { background-color: #e08900; }
+        .dropdown button:hover {
+            background-color: #e08900;
+        }
 
         .dropdown-content {
             display: none;
             margin-top: 0.5rem;
-            padding: 0.5rem;
+            padding-left: 1rem;
         }
 
-        .dropdown-content ul { list-style-type: none; padding: 0; }
+        .dropdown-content ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
 
         .dropdown-content li {
             margin-bottom: 0.5rem;
-            padding: 0.8rem;
+            padding: 0.5rem;
             border-radius: 5px;
             color: white;
             font-weight: bold;
         }
 
-        .dropdown-content.show { display: block; }
+        .dropdown-content.show {
+            display: block;
+        }
 
-/* Couleurs lignes 2000*/
+        /* Couleurs lignes 2000*/
         .ligne10 { background-color: #df0031; }
         .ligne20 { background-color: #aa7aaf; }
         .ligne30 { background-color: #27a2dd; }
@@ -99,12 +107,11 @@
         .ligne45 { background-color: #f398bf; }
         .ligne60 { background-color: #3eb754; }
         .ligne70 { background-color: #80003d; }
-		.ligne71 { background-color: #f4812a; }
-		/* Couleurs tybus 2000*/
-		.tybus2 { background-color: #15af97; }
-		.tybus3 { background-color: #15af97; }
+        .ligne71 { background-color: #f4812a; }
+
+        /* Couleurs tybus 2000*/
+        .tybus2, .tybus3, .tybus5 { background-color: #15af97; }
         .tybus4 { background-color: #ea9fc5; }
-        .tybus5 { background-color: #15af97; }
         .tybus6 { background-color: #6f6f6f; }
         .tybus7 { background-color: #0069b4; }
         .tybus9 { background-color: #00aeef; }
@@ -121,45 +128,71 @@
         .t5 { background-color: #6f6f6f; }
         .c1 { background-color: #0069b4; }
         .c2 { background-color: #00aeef; }
-        .sd { background-color: #ffdd00; }
-		.spp { background-color: #5c866d; }
-		
+        .sd { background-color: #ffdd00; color: #333; }
+        .spp { background-color: #5c866d; }
+        
         /* Couleurs lignes 2026 */
-		.h1 { background-color: #ff0000; }
-		.h2 { background-color: #0069b4; }
-		.h3 { background-color: #019640; }
+        .h1 { background-color: #ff0000; }
+        .h2 { background-color: #0069b4; }
+        .h3 { background-color: #019640; }
         .l4 { background-color: #831f82; }
         .l5 { background-color: #e6007e; }
         .l6 { background-color: #009640; }
         .l7 { background-color: #f7a600; }
-        .l13 { background-color: #004f8e; }
         .l8 { background-color: #00a1de; }
         .l9 { background-color: #008387; }
         .l305 { background-color: #ee776d; }
-        .sd { background-color: #ffdd00; color: black !important; }
+        
     </style>
+    <script>
+        function toggleDropdown(id) {
+            const content = document.getElementById(id);
+            content.classList.toggle('show');
+        }
+
+        function searchLignes() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let items = document.getElementsByTagName('li');
+            
+            for (let i = 0; i < items.length; i++) {
+                let text = items[i].innerText.toLowerCase();
+                if (text.includes(input)) {
+                    items[i].style.display = "";
+                    // Ouvre automatiquement le parent si on cherche
+                    if(input !== "") {
+                        items[i].closest('.dropdown-content').classList.add('show');
+                    }
+                } else {
+                    items[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </head>
 <body>
-
     <header>
-        <h1>Bienvenue sur TC ESTUAIRE !</h1>
+        <div class="test-banner"><h1>Bienvenue sur TC ESTUAIRE !</h1></div>
     </header>
 
     <main>
         <div class="search-container">
-            <input type="text" id="searchInput" onkeyup="searchLignes()" placeholder="Rechercher une ligne ou une destination (ex: Hélyce, Donges...)">
+            <input type="text" id="searchInput" onkeyup="searchLignes()" placeholder="Rechercher une ligne (ex: Hélyce, 10, Donges...)">
         </div>
 
         <section>
             <h2>INFO SITE !</h2>
-            <p>Ce site est actuellement en cours de développement...</p>
-            <p>Ce projet est indépendant et ne remplace pas les sites officiels. Son objectif est de retracer l'histoire du réseau de Saint-Nazaire.</p>
+            <p>Ce site est actuellement en cours de développement, par conséquent cette page est encore en cours d'écriture...</p>
+            <p>Ce projet est indépendant et ne remplace en aucun cas les sites officiels des réseaux de transports en commun.</p>
+            <p>Son objectif est de retracer l'histoire et l'évolution du réseau de Saint-Nazaire.</p>
         </section>
 
-        <section id="section2000">
+        <section>
             <h2>STRAN 2000</h2>
-            <p>Le réseau était marqué par la mascotte <strong>Strany</strong>. Les bus arboraient des designs jaune et bleu.</p>
-            
+            <p>À cette période, le réseau de transport de Saint-Nazaire était marqué par la présence du <strong>Strany</strong>, la mascotte du réseau.</p>
+            <p>Ce personnage accompagnait la communication du réseau et notamment sur les affiches horaires sur les abribus.</p>
+            <p>Les bus arboraient des designs jaune et bleu avec un schéma de lignes, et la STRAN s'est modernisée avec l'apparition de nouveaux services comme TY'BUS TAXI.</p>
+            <p>Point culture : À l’époque, presque toutes les lignes passaient par l’ancien hôpital du Moulin du Pé, situé à seulement quelques pas du lycée Hôtelier Sainte-Anne.</p>
+
             <div class="dropdown">
                 <button type="button" onclick="toggleDropdown('urbaines2000')">Lignes urbaines</button>
                 <div id="urbaines2000" class="dropdown-content">
@@ -177,9 +210,120 @@
             </div>
         </section>
 
-        <section id="section2012">
+        <section>
             <h2>Le réseau de 2012</h2>
+            <p>Le réseau STRAN avait considérablement évolué en 2012 :</p>
             <ul>
-                <li><strong>Arrivée du BHNS</strong> avec les Mercedes-Benz Citaro G Facelift.</li>
-                <li><strong>Information voyageurs</strong> en temps réel (écrans, appli M-STRAN).</li>
+                <li><strong>Arrivée du BHNS</strong> avec les Mercedes-Benz Citaro G Facelift</li>
+                <li><strong>Information voyageurs en temps réel</strong> (écrans aux arrêts, appli M-STRAN, ...).</li>
+                <li><strong>Création du pôle d'échanges</strong> sur le parvis de la Gare SNCF de Saint-Nazaire.</li>
+            </ul>
+            <p>Evidemment d'autres évolutions ont été aussi présentes mais ça serait trop long à tout lister...</p>
+            <p>A NOTER : Le réseau STRAN 2012 sera présent jusqu'au <strong>23 janvier 2026</strong> au soir !</p>
 
+            <div class="dropdown">
+                <button onclick="toggleDropdown('bhns')">Ligne BHNS</button>
+                <div id="bhns" class="dropdown-content">
+                    <ul>
+                        <li class="helyce">Ligne Hélyce - Montoir / Trignac <> Université</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button onclick="toggleDropdown('urbaines')">Lignes urbaines</button>
+                <div id="urbaines" class="dropdown-content">
+                    <ul>
+                        <li class="u1">Ligne U1 - Gare SNCF <> Pré Hembert</li>
+                        <li class="u2">Ligne U2 - Voltaire — Landettes <> Le Grand Pez</li>
+                        <li class="u3">Ligne U3 - Halles de Penhoët <> Chemin de la Source</li>
+                        <li class="u4">Ligne U4 - Petit Maroc <> Saint-André-des-Eaux</li>
+                        <li class="l13">Ligne L13 - Cité Sanitaire <> Gare de la Baule / Le Guézy</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button onclick="toggleDropdown('periurbaines')">Lignes périurbaines</button>
+                <div id="periurbaines" class="dropdown-content">
+                    <ul>
+                        <li class="t3">Ligne T3 - Gare SNCF <> La Chapelle-des-Marais</li>
+                        <li class="t4">Ligne T4 - Gare SNCF <> Gare de Donges</li>
+                        <li class="t5">Ligne T5 - Gare SNCF <> Besné — ZA Harrois</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button onclick="toggleDropdown('complementaires')">Lignes complémentaires</button>
+                <div id="complementaires" class="dropdown-content">
+                    <ul>
+                        <li class="c1">Ligne C1 - Gare SNCF <> Mairie de Trignac</li>
+                        <li class="c2">Ligne C2 - Gare SNCF <> Trévélan</li>
+                        <li class="sd">Ligne S/D - Soir/Dimanche</li>
+                        <li class="spp">Ligne SPP (Spécial Prézégat )</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Le réseau en 2026</h2>
+            <p>Le réseau est entièrement revu dans le cadre de l'arrivée des nouveaux bus électriques.</p>
+            <p>L'ouverture du nouveau réseau survient le samedi 24 janvier 2026.</p>
+            <ul>
+                <li>Le réseau comportera 3 lignes BHNS (H1 / H2 / H3) et 10 lignes standard (4, 5, 6, 7, 8, 9 et L13).</li>
+                <li>TAD YCEO FLEX (anciennement TY'BUS TAXI): le service sera pris en charge avec un abonnement et une refonte aussi des arrêts desservis.</li>
+            </ul>
+
+            <div class="dropdown">
+                <button onclick="toggleDropdown('bhns-futur')">Lignes BHNS</button>
+                <div id="bhns-futur" class="dropdown-content">
+                    <ul>
+                        <li class="h1">Ligne H1 - Montoir <> Gavy (anciennement Université)</li>
+                        <li class="h2">Ligne H2 - Trignac <> Plages des Jaunais</li>
+                        <li class="h3">Ligne H3 - Petit Maroc <> Kerlédé</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button onclick="toggleDropdown('urbaines-futur')">Lignes standard</button>
+                <div id="urbaines-futur" class="dropdown-content">
+                    <ul>
+                        <li class="l4">Ligne 4 - Le Plessis <> Chalands Fleuris</li>
+                        <li class="l5">Ligne 5 - Penhoët <> Le Grand Pez</li>
+                        <li class="l6">Ligne 6 - Halles de Penhoët <> Chemin de la Source</li>
+                        <li class="l7">Ligne 7 - Petit Maroc <> Saint-André-des-Eaux</li>
+                        <li class="l13">Ligne L13 - Cité Sanitaire <> Gare de la Baule / Le Guézy</li>
+                        <li class="l8">Ligne 8 - Gare SNCF <> La Chapelle-des-Marais</li>
+                        <li class="l9">Ligne 9 - Gare SNCF <> Gare de Donges</li>
+                        <li class="l305">Ligne 305 - Gare SNCF <> Besné — ZA Harrois (ligne mutualisée Aleop)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p>Fin des lignes complémentaires et service spéciaux</p>
+            <div class="dropdown">
+                <button onclick="toggleDropdown('fermeture-lignes-2026')">Les fermetures de ligne</button>
+                <div id="fermeture-lignes-2026" class="dropdown-content">
+                    <ul>
+                        <li class="c1">Ligne C1 - Gare SNCF <> Mairie de Trignac</li>
+                        <li class="sd">Ligne S/D - Soir/Dimanche</li>
+                        <li class="spp">Ligne SPP (Spécial Prézégat )</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p>Pour plus d'infos sur le futur réseau : <a href="https://www.yceo-mobilite.fr/reseau2026/" target="_blank">Mon réseau 2026 - YCEO</a></p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 ESTUAIRE TC - PASSION TAN</p>
+        <p>Suivez-moi sur <a href="https://www.instagram.com/passion.tan/" target="_blank">Instagram</a> :)</p>
+        <p><a href="https://onedrive.live.com/edit?cid=3cd1e6f98b3d7b97&id=3CD1E6F98B3D7B97!s9024bcd2be8f4faa89a424e394fdf090" target="_blank">Déploiement SAE</a></p>
+        <p>VERSION 1(test) / Tous droits réservés</p>
+    </footer>
+</body>
+</html>
