@@ -65,7 +65,7 @@
             background-color: #e08900;
         }
 
-        /* AJOUT DE L'ASCENSEUR ICI */
+        /* ASCENSEUR */
         .dropdown-content {
             display: none;
             margin-top: 0.5rem;
@@ -157,7 +157,7 @@
             <h2>STRAN 2000</h2>
             <p>À cette période, le réseau était marqué par la mascotte <strong>Strany</strong>.</p>
             <div class="dropdown">
-                <button type="button" onclick="toggleDropdown('urbaines2000')">Lignes urbaines (2000)</button>
+                <button type="button" onclick="toggleDropdown('urbaines2000')">Lignes urbaines</button>
                 <div id="urbaines2000" class="dropdown-content">
                     <ul>
                         <li class="ligne10">Ligne 10 - Méan Centre <> Bouletterie</li>
@@ -171,6 +171,23 @@
                     </ul>
                 </div>
             </div>
+            
+            <div class="dropdown">
+                <button type="button" onclick="toggleDropdown('tybus2000')">Lignes </button>
+                <div id="tybus2000" class="dropdown-content">
+                    <ul>
+                        <li class="ligne10">Ligne 10 - Méan Centre <> Bouletterie</li>
+                        <li class="ligne20">Ligne 20 - Heinlex LEP <> Bert</li>
+                        <li class="ligne30">Ligne 30 - Hôtel de Ville <> UNIVERSITE</li>
+                        <li class="ligne40">Ligne 40 - Gare SNCF <> Chemin de la Source</li>
+                        <li class="ligne45">Ligne 45 - Trignac <> Villès - Mollé</li>
+                        <li class="ligne60">Ligne 60 - Raoul Dufy <> UNIVERSITE</li>
+                        <li class="ligne70">Ligne 70 - La Belle Hautière <> Brais</li>
+                        <li class="ligne71">Ligne 71 - Le Cormier <> Ecomusée</li>
+                    </ul>
+                </div>
+            </div>
+            
         </section>
 
         <section>
@@ -178,7 +195,7 @@
             <p>Marqué par l'arrivée du BHNS et du pôle d'échanges de la Gare.</p>
             
             <div class="dropdown">
-                <button onclick="toggleDropdown('bhns')">Ligne BHNS (2012)</button>
+                <button onclick="toggleDropdown('bhns')">Ligne BHNS</button>
                 <div id="bhns" class="dropdown-content">
                     <ul>
                         <li class="helyce">Ligne Hélyce - Montoir / Trignac <> Université</li>
@@ -187,7 +204,7 @@
             </div>
 
             <div class="dropdown">
-                <button onclick="toggleDropdown('urbaines')">Lignes urbaines (2012)</button>
+                <button onclick="toggleDropdown('urbaines')">Lignes urbaines</button>
                 <div id="urbaines" class="dropdown-content">
                     <ul>
                         <li class="u1">Ligne U1 - Gare SNCF <> Pré Hembert</li>
@@ -200,7 +217,7 @@
             </div>
 
             <div class="dropdown">
-                <button onclick="toggleDropdown('periurbaines')">Lignes périurbaines (2012)</button>
+                <button onclick="toggleDropdown('periurbaines')">Lignes périurbaines</button>
                 <div id="periurbaines" class="dropdown-content">
                     <ul>
                         <li class="t3">Ligne T3 - Gare SNCF <> La Chapelle-des-Marais</li>
@@ -211,7 +228,7 @@
             </div>
 
             <div class="dropdown">
-                <button onclick="toggleDropdown('complementaires')">Lignes complémentaires (2012)</button>
+                <button onclick="toggleDropdown('complementaires')">Lignes complémentaires</button>
                 <div id="complementaires" class="dropdown-content">
                     <ul>
                         <li class="c1">Ligne C1 - Gare SNCF <> Mairie de Trignac</li>
@@ -228,7 +245,7 @@
             <p>Refonte totale "YCEO" avec l'arrivée des bus électriques.</p>
 
             <div class="dropdown">
-                <button onclick="toggleDropdown('bhns-futur')">Lignes BHNS (2026)</button>
+                <button onclick="toggleDropdown('bhns-futur')">Lignes BHNS</button>
                 <div id="bhns-futur" class="dropdown-content">
                     <ul>
                         <li class="h1">Ligne H1 - Montoir <> Gavy</li>
@@ -239,7 +256,7 @@
             </div>
 
             <div class="dropdown">
-                <button onclick="toggleDropdown('urbaines-futur')">Lignes standard (2026)</button>
+                <button onclick="toggleDropdown('urbaines-futur')">Lignes standard</button>
                 <div id="urbaines-futur" class="dropdown-content">
                     <ul>
                         <li class="l4">Ligne 4 - Le Plessis <> Chalands Fleuris</li>
@@ -275,3 +292,4 @@
     </footer>
 </body>
 </html>
+
