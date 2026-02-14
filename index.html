@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenue sur TC ESTUAIRE | PASSION TAN</title>
     <style>
+		/*Styles Généraux*/
+        #info-site h2 {
+            color: #b30000; /* Couleur titre*/
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ffe0b3; /* Orange */
+            background-color: #ffe0b3;
             color: #333;
         }
 
@@ -34,6 +39,22 @@
 
         h1, h2 {
             color: #ff9800;
+        }
+
+		.info-box {
+            background-color: #fa8072 !important; /* Couleur Saumon */
+            border: 3px solid #ff0000 !important;  /* Bordure Rouge épaisse */
+            border-radius: 10px;
+        }
+
+        .info-box h2 {
+            color: #b30000 !important; /* Titre rouge foncé pour le contraste */
+            margin-top: 0;
+        }
+
+        .info-box p {
+            color: #000; /* Texte noir pour une lecture parfaite sur le saumon */
+            font-weight: 500;
         }
 
         footer {
@@ -70,8 +91,8 @@
             display: none;
             margin-top: 0.5rem;
             padding-left: 1rem;
-            max-height: 250px; /* Hauteur max avant l'ascenseur */
-            overflow-y: auto;  /* Active l'ascenseur vertical */
+            max-height: 250px; /* Hauteur max avant ascenseur */
+            overflow-y: auto;  /* Activation ascenseur vertical */
             border: 1px solid #ddd;
             border-radius: 5px;
             background-color: #f9f9f9;
@@ -95,7 +116,7 @@
             display: block;
         }
 
-        /* Couleurs lignes 2000*/
+        /*COULEURS LIGNES 2000*/
         .ligne10 { background-color: #df0031; }
         .ligne20 { background-color: #aa7aaf; }
         .ligne30 { background-color: #27a2dd; }
@@ -105,19 +126,19 @@
         .ligne70 { background-color: #80003d; }
         .ligne71 { background-color: #f4812a; }
 		
-        /* Couleurs tybus 2000*/
+        /*COULEURS TYBUS 2000*/
         .tybus1 { background-color: #ffd423; }
         .tybus2 { background-color: #006f54; }
         .tybus3 { background-color: #df3a3f; }
         .tybus4 { background-color: #0094c2; }
         .tybus5 { background-color: #7b77b8; }
         .tybus6 { background-color: #ec7832; }
-        .tybus7 { background-color: #ea028c; }
+        .tybus7 { background-color: #ea028c; } 
 		#A REVOIR EN DESSOUS
         .tybus8 { background-color: #8bd7f8; }
 		.tybus9 { background-color: #953d97; }
 
-        /* Couleurs lignes 2012 */
+        /*COULEURS LIGNES 2012*/
         .helyce { background-color: #ff0000; }
         .u1 { background-color: #f39200; }
         .u2 { background-color: #94c23d; }
@@ -132,7 +153,7 @@
         .sd { background-color: #ffdd00; color: #333; }
         .spp { background-color: #5c866d; }
         
-        /* Couleurs lignes 2026 */
+        /* COULEURS LIGNES 2026*/
         .h1 { background-color: #ff0000; }
         .h2 { background-color: #0069b4; }
         .h3 { background-color: #019640; }
@@ -145,12 +166,27 @@
         .l305 { background-color: #ee776d; }
         
     </style>
-    <script>
-        function toggleDropdown(id) {
-            const content = document.getElementById(id);
-            content.classList.toggle('show');
-        }
-    </script>
+	
+	<script>
+    function toggleDropdown(id) {
+        // RECUPERATION DES LISTES DEROULANTES
+        const allDropdowns = document.querySelectorAll('.dropdown-content');
+        const target = document.getElementById(id);
+
+        // BOUCLE CHAQUE LISTE
+        allDropdowns.forEach(dropdown => {
+            // SI CLIC SUR LIGNE CHANGER L'ETAT DE LA LIGNE
+            if (dropdown === target) {
+                dropdown.classList.toggle('show');
+            } 
+            // SINON ON ASSURE QU'ELLE SOIT FERME
+            else {
+                dropdown.classList.remove('show');
+            }
+        });
+    }
+	</script>
+	
 </head>
 <body>
     <header>
@@ -158,11 +194,12 @@
     </header>
 
     <main>
-        <section>
-            <h2>INFO SITE !</h2>
+        <section class="info-box">
+            <h2>- INFO SITE -</h2>
             <p>Ce site est actuellement en cours de développement, par conséquent cette page est encore en cours d'écriture...</p>
             <p>Ce projet est indépendant et ne remplace en aucun cas les sites officiels.</p>
             <p>Son objectif est de retracer l'histoire et l'évolution du réseau de Saint-Nazaire.</p>
+			<p>Le réseau nantais aura également une partie consacré sur ce site.</p>
         </section>
 
         <section>
@@ -314,13 +351,13 @@
     </main>
     
     <footer>
-        <p>&copy; 2025 ESTUAIRE TC - PASSION TAN</p>
+        <p>&copy; 2026 ESTUAIRE TC - PASSION TAN</p>
         <p>Suivez-moi sur <a href="https://www.instagram.com/passion.tan/" target="_blank">Instagram</a> :)</p>
-		<p>Suivez-moi sur <a href="https://onedrive.live.com/edit?cid=3cd1e6f98b3d7b97&id=3CD1E6F98B3D7B97!s9024bcd2b
+		<p> <a href="https://onedrive.live.com/edit?cid=3cd1e6f98b3d7b97&id=3CD1E6F98B3D7B97!s9024bcd2b
 							  e8f4faa89a424e394fdf090&resid=3CD1E6F98B3D7B97!s9024bcd2be8f4faa89a424e394fdf090&ithint=file%2Cxlsx&embed=1&em=2&wdHideGridlines=True&wdInConfigurator=Tr
 							  ue%2CTrue&migratedtospo=true&redeem=aHR0cHM6Ly8xZHJ2Lm1zL3gvYy8zY2QxZTZmOThiM2Q3Yjk3L0lRVFN2Q1NR
 							  ajc2cVQ0bWtKT09VX2ZDUUFXMGx2bVJYR2I4T1VXVU9BM0Y4alVrP2VtPTImd2RIaWRlR3JpZGxpbmVzPVRydWUmd2RJbkNvbmZpZ3VyYXRvcj1UcnVlJndkSW
-							  5Db25maWd1cmF0b3I9VHJ1ZQ&wdo=2 target="_blank">- Déploiement SAE-</a> :)</p>
+							  5Db25maWd1cmF0b3I9VHJ1ZQ&wdo=2 target="_blank">- Déploiement SAE -</a> </p>
         <p>VERSION 1(test) FEVRIER 2026 / Tous droits réservés</p>
     </footer>
 </body>
