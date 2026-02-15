@@ -73,45 +73,13 @@
             font-weight: 500;
         }
 
-		footer {
-    		background-color: #333;
-    		color: white;
-    	padding: 2rem;
-    	margin-top: 2rem;
-		}
-
-		.footer-container {
-   		display: flex;
-   	 	justify-content: space-between; /* Pousse le logo à gauche et le texte à droite */
-    	align-items: center;           /* Aligne verticalement au centre */
-    	max-width: 1200px;             /* Optionnel : évite que ce soit trop collé aux bords sur grand écran */
-    	margin: 0 auto;                /* Centre le container */
-		}
-
-		.logo-footer {
-    	max-width: 120px;              /* Ajuste la taille de ton logo ici */
-    	height: auto;
-		}
-
-		.footer-right {
-    	text-align: right;             /* Aligne le texte à l'intérieur du bloc de droite */
-    	line-height: 1.6;              /* Espace un peu les lignes de texte */
-		}
-
-		.footer-right p {
-   		 margin: 5px 0;                 /* Gère l'espace entre chaque ligne de texte */
-		}
-
-		/* Version mobile : on remet tout au centre l'un au dessus de l'autre */
-		@media (max-width: 600px) {
-    	.footer-container {
-        flex-direction: column;
-        text-align: center;
-   	 	}
-    	.footer-right {
-        text-align: center;
-        margin-top: 20px;
-    	}
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
 
         /* Système de menu déroulant */
         .dropdown {
@@ -355,6 +323,15 @@
                     </ul>
                 </div>
             </div>
+			
+			<div class="dropdown">
+				<button type="button" onclick="toggleDropdown('navetteZenibus')">Navette</button>
+				<div id="navetteZenibus" class="dropdown-content">
+					<ul>
+						<li style="background-color: #003366;">ZeniBus - Parking du Théâtre <> Hôtel de Ville</li>
+					</ul>
+            </div>
+			
         </section>
 
         <section>
@@ -406,20 +383,12 @@
         </section>
     </main>
     
-	<footer>
-    <div class="footer-container">
-        <div class="footer-left">
-            <img src="logo-passion-tan.png" alt="Logo Passion TAN" class="logo-footer">
-        </div>
-
-        <div class="footer-right">
-            <p>© 2026</p>
-            <p>Suivez-moi sur <a href="https://www.instagram.com/passion.tan/" target="_blank">Instagram</a> :)</p>
-            <p>VERSION 1 / Février 2026</p>
-            <p>Tous droits réservés</p>
-        </div>
-    </div>
-	</footer>
+    <footer>
+        <p>&copy; 2026 - PASSION TAN</p>
+        <p>Suivez-moi sur <a href="https://www.instagram.com/passion.tan/" target="_blank">Instagram</a> :)</p>
+        <p>VERSION 1 / Février 2026</p>
+		<p>Tous droits réservés - <a href="google.fr" target="_blank">Mentions légales</a></p>
+    </footer>
 </body>
 	
 </html>
