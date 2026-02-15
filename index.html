@@ -73,13 +73,45 @@
             font-weight: 500;
         }
 
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
-        }
+		footer {
+    		background-color: #333;
+    		color: white;
+    	padding: 2rem;
+    	margin-top: 2rem;
+		}
+
+		.footer-container {
+   		display: flex;
+   	 	justify-content: space-between; /* Pousse le logo à gauche et le texte à droite */
+    	align-items: center;           /* Aligne verticalement au centre */
+    	max-width: 1200px;             /* Optionnel : évite que ce soit trop collé aux bords sur grand écran */
+    	margin: 0 auto;                /* Centre le container */
+		}
+
+		.logo-footer {
+    	max-width: 120px;              /* Ajuste la taille de ton logo ici */
+    	height: auto;
+		}
+
+		.footer-right {
+    	text-align: right;             /* Aligne le texte à l'intérieur du bloc de droite */
+    	line-height: 1.6;              /* Espace un peu les lignes de texte */
+		}
+
+		.footer-right p {
+   		 margin: 5px 0;                 /* Gère l'espace entre chaque ligne de texte */
+		}
+
+		/* Version mobile : on remet tout au centre l'un au dessus de l'autre */
+		@media (max-width: 600px) {
+    	.footer-container {
+        flex-direction: column;
+        text-align: center;
+   	 	}
+    	.footer-right {
+        text-align: center;
+        margin-top: 20px;
+    	}
 
         /* Système de menu déroulant */
         .dropdown {
@@ -374,15 +406,20 @@
         </section>
     </main>
     
-    <footer>
-		<div class="footer-logo">
-        <img src="tc_estuaire_logo.png" alt="Logo TC ESTUAIRE" width="120">
-		</div>
-        <p>&copy; 2026</p>
-        <p>Suivez-moi sur <a href="https://www.instagram.com/passion.tan/" target="_blank">Instagram</a> :)</p>
-        <p>VERSION 1 / Février 2026</p>
-		<p>Tous droits réservés</p>
-    </footer>
+	<footer>
+    <div class="footer-container">
+        <div class="footer-left">
+            <img src="logo-passion-tan.png" alt="Logo Passion TAN" class="logo-footer">
+        </div>
+
+        <div class="footer-right">
+            <p>© 2026</p>
+            <p>Suivez-moi sur <a href="https://www.instagram.com/passion.tan/" target="_blank">Instagram</a> :)</p>
+            <p>VERSION 1 / Février 2026</p>
+            <p>Tous droits réservés</p>
+        </div>
+    </div>
+	</footer>
 </body>
 	
 </html>
